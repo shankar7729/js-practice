@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 align="center">Students Marksheet</h1><hr>
+    <table align="center" border="0" cellpadding="5" cellspacing="2">
+        <tr>
+            <th>English :</th>
+            <td><input type="number" placeholder="Enter marks" id="English"></td>
+        </tr>
+        <tr>
+            <th>Telugu :</th>
+            <td><input type="number" placeholder="Enter marks" id="Telugu"></td>
+        </tr>
+        <tr>
+            <th>Maths :</th>
+            <td><input type="number" placeholder="Enter marks" id="Maths"></td>
+        </tr>
+        <tr>
+            <th>Science :</th>
+            <td><input type="number" placeholder="Enter marks" id="Science"></td>
+        </tr>
+        <tr>
+            <th>Physics :</th>
+            <td><input type="number" placeholder="Enter marks" id="Physics"></td>
+        </tr>
+        <tr>
+            <th>Social :</th>
+            <td><input type="number" placeholder="Enter marks" id="Social"></td>
+        </tr>
+        <tr>
+           <td colspan="2" align="center"><button onclick="calculateall()">Result</button></td>
+        </tr>
+
+
+    </table>
+   <h1 id="marksdiv" align="center"></h1>
+
+   <script>
+
+    function calculateall(){
+        let English=document.querySelector("#English").value
+        let Telugu=document.querySelector("#Telugu").value
+        let Maths=document.querySelector("#Maths").value
+        let Science=document.querySelector("#Science").value
+        let Physics=document.querySelector("#Physics").value
+        let Social=document.querySelector("#Social").value
+
+        let grade="."
+
+        let avg=(parseInt(English)+parseInt(Telugu)+parseInt(Maths)+parseInt(Science)+parseInt(Physics)+parseInt(Social))/6;
+
+        if(avg>=90){
+            grade="A+";}
+            else if(avg>80 && avg<90){
+            grade="A";
+            }
+            else if(avg>70 && avg<80){
+            grade="B";
+            }
+            else if(avg>60 && avg<70){
+            grade="C";
+            }
+            else if(avg>50 && avg<60){
+            grade="D";
+            }
+
+        document.querySelector("#marksdiv").innerHTML=`Your average score is : ${avg} and Grade is : ${grade}`
+    }
+
+
+
+   </script>
+
+</body>
+</html>
